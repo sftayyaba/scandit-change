@@ -20,6 +20,15 @@ export class ScannerServiceProvider {
     var settings = new Scandit.ScanSettings();
     settings.setSymbologyEnabled(Scandit.Barcode.Symbology.CODE128, true);
     // Instantiate the barcode picker by using the settings defined above.
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.EAN13, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.UPCA, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.EAN8, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.UPCE, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.CODE39, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.CODE128, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.ITF, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.QR, true);
+    settings.setSymbologyEnabled(Scandit.Barcode.Symbology.DATA_MATRIX, true);
     this.picker = new Scandit.BarcodePicker(settings);
   }
 
