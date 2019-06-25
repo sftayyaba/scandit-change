@@ -11,11 +11,17 @@ export class HomePage implements ScannerDelegate {
 public barcodes: Barcode[] = [];
   public continuousMode: boolean = false;
 
+  @ViewChild(IonContent) private content: IonContent;
+
   constructor(public scanner: ScannerServiceProvider) {}
 
   public ionViewDidEnter(): void {
     // this.scanner.contentTop = this.content.contentTop;
     this.scanner.delegate = this;
+    this.scanner.start();
+  }
+
+  public restartScan(){
     this.scanner.start();
   }
 
